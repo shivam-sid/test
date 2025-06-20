@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Meta settings for responsiveness and character encoding -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vishakha Pandey – Portfolio</title>
+
+  <!-- Add this in <head> of index.html -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+
+  <!-- Google Fonts (Elegant & Professional) -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+
+  <!-- CSS Files -->
+  <link rel="stylesheet" href="assets/css/variables.css" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="stylesheet" href="assets/css/animations.css" />
+
+  <!-- Scroll animation library (optional enhancement) -->
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+</head>
+<body>
+  <!-- Navigation Bar -->
+  <nav class="navbar">
+  <!-- HOME link on the left -->
+  <div class="nav-left">
+    <a href="index.html">HOME</a>
+  </div>
+
+  <!-- Hamburger icon (only visible on small screens) -->
+  <div class="nav-toggle">
+    <i class="fas fa-bars"></i>
+  </div>
+
+  <!-- Main navigation links -->
+  <div class="nav-menu nav-right">
+    <a href="intro.html">INTRO</a>
+    <a href="projects.html">PROJECTS</a>
+    <a href="experience.html">EXPERIENCE</a>
+    <a href="certificates.html">CERTIFICATES/RESUME</a>
+    <a href="contact.html">CONTACT</a>
+  </div>
+  </nav>
+
+
+  <!-- Hero Section with Background Image -->
+  <section class="hero" id="hero">
+    <div class="hero-background"></div> <!-- background will be set via CSS -->
+
+
+    <!-- Central content -->
+    <div class="hero-content" data-aos="fade-up">
+      <h1>
+        Vishakha 
+        <img src="assets/img/profile.png" alt="Vishakha Pandey" class="inline-hero-image" />
+        Pandey
+      </h1>
+
+      <p>Data-driven finance professional focused on delivering strategic insights through analytics and reporting.</p>
+
+      <!-- Social icons row -->
+      <div class="social-icons">
+        <a href="https://twitter.com/" target="_blank"><i class="fab fa-twitter"></i></a>
+        <a href="https://github.com/" target="_blank"><i class="fab fa-github"></i></a>
+        <a href="https://linkedin.com/" target="_blank"><i class="fab fa-linkedin"></i></a>
+
+      </div>
+
+      <!-- Buttons (like Yan Holtz) -->
+      <div class="hero-buttons">
+        <a href="projects.html" class="btn-outline">VISIT</a>
+        <a href="contact.html" class="btn-outline">CONTACT</a>
+      </div>
+    </div>
+
+    <!-- Scroll Down Arrow -->
+    <div class="scroll-down" onclick="scrollToIntro()">
+      <i class="fas fa-chevron-down"></i>
+    </div>
+  </section>
+
+  <!-- JS Libraries -->
+  <script src="assets/js/scrollToIntro.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script src="/assets/js/mobileMenuToggle.js"></script>
+  <script>
+    AOS.init(); // Initialize animations on scroll
+  </script>
+</body>
+</html>

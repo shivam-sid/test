@@ -1,0 +1,25 @@
+/* ============================
+   Global Variables & Theme
+   ============================ */
+
+:root {
+  /* Colors */
+  --color-bg: #ffffff;                   /* Default background */
+  --color-dark: #1a1a1a;                 /* Dark text */
+  --color-accent: #4eaf9c;              /* Highlight color (mint green) */
+  --color-muted: #777;                  /* Secondary text */
+  --color-border: #ddd;                 /* Light border */
+
+  /* Fonts */
+  --font-body: 'Inter', sans-serif;
+
+  /* Spacing */
+  --spacing-sm: 0.5rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 2rem;
+  --spacing-xl: 4rem;
+
+  /* Sizes */
+  --nav-height: 60px;
+  --max-width: 1200px;
+}
