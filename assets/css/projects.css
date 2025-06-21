@@ -349,3 +349,21 @@ html.modal-active, body.modal-active {
         font-size: 0.9rem;
     }
 }
+
+
+
+/* =============================
+   Scroll Animations
+   ============================= */
+
+/* Base style for elements that will animate */
+.animate-on-scroll {
+    opacity: 0;
+    transform: translateY(30px); /* Matches the 0% state of fadeInBlur */
+    filter: blur(6px); /* Matches the 0% state of fadeInBlur */
+    /* No transition here; animation will handle the movement */
+}
+
+
+
+

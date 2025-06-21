@@ -1,0 +1,326 @@
+/* =============================
+   Contact Page Styles
+   ============================= */
+
+.contact-section {
+    padding: var(--spacing-xl) var(--spacing-xxl); /* Increased horizontal padding */
+    margin-top: var(--nav-height); /* Offset for fixed navbar */
+    max-width: var(--max-width); /* Using global variable for max-width */
+    margin-left: auto;
+    margin-right: auto;
+    display: flex; /* Use flexbox for main section content */
+    flex-direction: column;
+    align-items: center; /* Center content horizontally */
+}
+
+.section-title {
+    font-size: 3.5rem; /* Larger font size for more impact */
+    color: var(--color-dark);
+    margin-bottom: var(--spacing-md); /* Adjust as pseudo-element will add space */
+    text-align: center;
+    font-weight: 700; /* Bolder title */
+    letter-spacing: -0.03em; /* Slightly tighter letter spacing */
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.08); /* Slightly stronger subtle shadow */
+    position: relative; /* Needed for positioning the pseudo-element */
+    padding-bottom: var(--spacing-sm); /* Space for the underline */
+}
+
+/* Pseudo-element for the decorative line under the title */
+.section-title::after {
+    content: '';
+    display: block;
+    width: 60px; /* Length of the line */
+    height: 4px; /* Thickness of the line */
+    background-color: var(--color-accent); /* Uses your accent color */
+    margin: var(--spacing-sm) auto 0 auto; /* Centers the line and adds space below it */
+    border-radius: 2px; /* Slightly rounded ends for the line */
+}
+
+.contact-intro-text {
+    font-size: 1.25rem; /* Slightly larger intro text */
+    color: var(--color-muted);
+    text-align: center;
+    margin-top: var(--spacing-lg); /* Ensure enough space from title + line */
+    margin-bottom: var(--spacing-xxl); /* Increased margin-bottom for more space */
+    max-width: 800px; /* Wider intro text */
+    line-height: 1.6; /* Better readability */
+}
+
+.contact-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 2fr; /* Info on left, form on right */
+    gap: var(--spacing-xxl); /* Increased space between columns */
+    background-color: white;
+    border-radius: 12px; /* Slightly more rounded corners */
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08); /* Stronger, softer shadow */
+    padding: var(--spacing-xxxl); /* Significantly more internal padding for the wrapper */
+    margin-bottom: var(--spacing-xxl); /* More space below wrapper */
+    width: 100%; /* Ensure it takes full available width */
+    max-width: 1000px; /* Max width for the wrapper */
+}
+
+.contact-info {
+    background-color: var(--color-light); /* Consistent light background */
+    padding: var(--spacing-xl); /* More internal padding for contact info box */
+    border-radius: 10px; /* Rounded corners */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Vertically center content */
+    align-items: flex-start; /* Align items to the start */
+    border: 1px solid var(--color-border); /* Subtle border */
+}
+
+.contact-info h3,
+.contact-form h3,
+.map-container h3 {
+    font-size: 2rem; /* Larger sub-headings */
+    color: var(--color-dark);
+    margin-top: 0;
+    margin-bottom: var(--spacing-xl); /* Increased margin-bottom for more space */
+    font-weight: 700; /* Bolder */
+    text-align: center; /* Center headings in their respective blocks */
+    width: 100%; /* Ensure heading takes full width */
+}
+
+.contact-info .info-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: var(--spacing-md);
+    font-size: 1.05rem; /* Slightly larger text */
+    color: var(--color-dark);
+    line-height: 1.5; /* Better readability */
+}
+
+.contact-info .info-item i {
+    color: var(--color-accent);
+    margin-right: var(--spacing-sm);
+    font-size: 1.5rem; /* Larger icons */
+    width: 35px; /* Fixed width for icons */
+    text-align: center;
+    flex-shrink: 0; /* Prevent icon from shrinking */
+}
+
+.contact-info .info-item a {
+    color: var(--color-dark);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.contact-info .info-item a:hover {
+    color: var(--color-accent);
+}
+
+.contact-form {
+    padding: var(--spacing-xl); /* More internal padding for contact form box */
+}
+
+.contact-form .form-group {
+    margin-bottom: var(--spacing-md);
+}
+
+.contact-form label {
+    display: block;
+    font-size: 1rem; /* Clearer label font size */
+    color: var(--color-dark);
+    margin-bottom: var(--spacing-xs);
+    font-weight: 600; /* Bolder labels */
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form textarea {
+    width: 100%;
+    padding: 1rem; /* More padding for inputs */
+    border: 1px solid var(--color-border);
+    border-radius: 8px; /* More rounded inputs */
+    font-size: 1rem;
+    color: var(--color-dark);
+    background-color: var(--color-bg);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-form input[type="text"]:focus,
+.contact-form input[type="email"]:focus,
+.contact-form textarea:focus {
+    border-color: var(--color-accent);
+    box-shadow: 0 0 0 4px rgba(var(--color-accent-rgb), 0.25); /* Stronger focus ring */
+    outline: none;
+}
+
+.contact-form textarea {
+    resize: vertical;
+    min-height: 140px; /* Slightly taller textarea */
+}
+
+.contact-form .btn-primary {
+    display: block;
+    width: 100%;
+    padding: 1.1rem; /* More padding for button */
+    font-size: 1.2rem; /* Larger button text */
+    margin-top: var(--spacing-lg); /* More space above button */
+    text-align: center;
+    border-radius: 8px; /* Consistent border radius */
+    font-weight: 600;
+}
+
+.map-container {
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08); /* Consistent shadow */
+    padding: var(--spacing-xxl); /* More internal padding for map box */
+    text-align: center;
+    margin-top: var(--spacing-xl);
+    width: 100%;
+    max-width: 1000px; /* Max width for the map container */
+}
+
+.map-container iframe {
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    height: 450px; /* Slightly taller map */
+    display: block; /* Remove extra space below iframe */
+    margin-top: var(--spacing-lg); /* Space below heading */
+}
+
+/* =============================
+   Responsive Design for Contact Page
+   ============================= */
+@media (max-width: 992px) {
+    .contact-section {
+        padding: var(--spacing-lg) var(--spacing-xl); /* Adjusted responsive padding */
+    }
+    .section-title {
+        font-size: 2.8rem; /* Adjusted for medium screens */
+    }
+    .section-title::after {
+        width: 50px; /* Adjust line width */
+    }
+    .contact-intro-text {
+        font-size: 1.1rem;
+        margin-bottom: var(--spacing-lg);
+    }
+    .contact-wrapper {
+        grid-template-columns: 1fr; /* Stack info and form on medium screens */
+        padding: var(--spacing-xxl); /* Adjusted responsive padding */
+        gap: var(--spacing-xl);
+        max-width: 700px; /* Constrain width on smaller screens */
+    }
+    .contact-info, .contact-form {
+        padding: var(--spacing-lg); /* Adjusted responsive padding */
+    }
+    .map-container {
+        padding: var(--spacing-xl); /* Adjusted responsive padding */
+        max-width: 700px; /* Constrain width on smaller screens */
+    }
+    .map-container h3 {
+        font-size: 1.8rem;
+    }
+    .map-container iframe {
+        height: 350px;
+    }
+}
+
+@media (max-width: 768px) {
+    .contact-section {
+        padding: var(--spacing-lg) var(--spacing-md);
+    }
+    .section-title {
+        font-size: 2.2rem; /* Adjusted for small screens */
+    }
+    .section-title::after {
+        width: 40px; /* Adjust line width */
+        height: 3px; /* Adjust line thickness */
+    }
+    .contact-intro-text {
+        font-size: 1rem;
+    }
+    .contact-wrapper {
+        padding: var(--spacing-xl); /* Adjusted responsive padding */
+    }
+    .contact-info, .contact-form {
+        padding: var(--spacing-md); /* Adjusted responsive padding */
+    }
+    .map-container {
+        padding: var(--spacing-lg); /* Adjusted responsive padding */
+    }
+    .contact-info h3,
+    .contact-form h3,
+    .map-container h3 {
+        font-size: 1.6rem;
+    }
+    .contact-info .info-item {
+        font-size: 0.95rem;
+    }
+    .contact-info .info-item i {
+        font-size: 1.3rem;
+    }
+    .contact-form input[type="text"],
+    .contact-form input[type="email"],
+    .contact-form textarea {
+        padding: 0.9rem;
+        font-size: 0.95rem;
+    }
+    .contact-form textarea {
+        min-height: 120px;
+    }
+    .contact-form .btn-primary {
+        padding: 1rem;
+        font-size: 1.1rem;
+    }
+    .map-container iframe {
+        height: 300px;
+    }
+}
+
+@media (max-width: 480px) {
+    .contact-section {
+        padding: var(--spacing-md) var(--spacing-sm);
+    }
+    .section-title {
+        font-size: 1.8rem; /* Adjusted for extra small screens */
+    }
+    .section-title::after {
+        width: 30px; /* Adjust line width */
+        height: 2px; /* Adjust line thickness */
+    }
+    .contact-intro-text {
+        font-size: 0.9rem;
+    }
+    .contact-wrapper {
+        padding: var(--spacing-lg); /* Adjusted responsive padding */
+        border-radius: 8px;
+    }
+    .contact-info, .contact-form {
+        padding: var(--spacing-sm); /* Adjusted responsive padding */
+    }
+    .contact-info h3,
+    .contact-form h3,
+    .map-container h3 {
+        font-size: 1.3rem;
+    }
+    .contact-info .info-item {
+        font-size: 0.85rem;
+        margin-bottom: var(--spacing-sm);
+    }
+    .contact-info .info-item i {
+        font-size: 1.1rem;
+        width: 30px;
+    }
+    .contact-form input,
+    .contact-form textarea {
+        font-size: 0.85rem;
+        padding: 0.8rem;
+    }
+    .contact-form .btn-primary {
+        font-size: 1rem;
+        padding: 0.8rem;
+    }
+    .map-container {
+        padding: var(--spacing-md); /* Adjusted responsive padding */
+        border-radius: 8px;
+    }
+    .map-container iframe {
+        height: 200px;
+    }
+}

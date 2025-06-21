@@ -1,10 +1,105 @@
-<!-- about.html, projects.html, certifications.html, contact.html -->
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Page Title</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact – Vishakha Pandey</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <link rel="stylesheet" href="./assets/css/variables.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/contact.css"> 
+    <link rel="stylesheet" href="./assets/css/animations.css">
 </head>
-<body>
-  <h1>Coming Soon...</h1>
+<body class="fade-in"> 
+  
+   <nav class="navbar">
+    <div class="nav-left">
+      <a href="index.html">HOME</a>
+    </div>
+    <div class="nav-toggle">
+      <i class="fas fa-bars"></i>
+    </div>
+    <div class="nav-menu nav-right">
+      <a href="intro.html" >INTRO</a>
+      <a href="projects.html">PROJECTS</a>
+      <a href="experience.html" >EXPERIENCE</a>
+      <a href="certificates.html">CERTIFICATES/RESUME</a>
+      <a href="contact.html"  class="active-page">CONTACT</a>
+    </div>
+  </nav>
+
+    <main id="contact-content">
+        <section class="contact-section">
+            <h2 class="section-title animate-on-scroll delay-1">Get in Touch</h2>
+            <p class="contact-intro-text animate-on-scroll delay-2">
+                Have a question, proposal, or just want to say hello? I'd love to hear from you!
+            </p>
+
+            <div class="contact-wrapper">
+                <div class="contact-info animate-on-scroll delay-3">
+                    <h3>Contact Information</h3>
+                    <div class="info-item">
+                        <i class="fas fa-envelope"></i>
+                        <p>Email: <a href="mailto:pandeyvishakha82@gmail.com">pandeyvishakha82@gmail.com</a></p>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-phone-alt"></i>
+                        <p>Phone: <a href="tel:+917978046823">+91-7978046823</a></p>
+                    </div>
+                    <div class="info-item">
+                        <i class="fab fa-linkedin"></i>
+                        <p>LinkedIn: <a href="https://www.linkedin.com/in/vishakha-pandey-7320a8259/" target="_blank">https://www.linkedin.com/in/vishakha-pandey-7320a8259/</a></p>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <p>Location: Rourkela, Odisha, India</p>
+                    </div>
+                </div>
+
+                <div class="contact-form animate-on-scroll delay-4">
+                    <h3>Send Me a Message</h3>
+                    <form action="YOUR_FORM_SUBMIT_URL" method="POST">
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" name="name" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" placeholder="Your Email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <input type="text" id="subject" name="subject" placeholder="Subject of your message">
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" rows="6" placeholder="Your Message" required></textarea>
+                        </div>
+                        <button type="submit" class="btn-primary">Send Message</button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="map-container animate-on-scroll delay-5">
+                <h3>My General Location</h3>
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d119339.81643198595!2d84.77335661914169!3d22.259253723326797!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a229a43a75005b7%3A0xc3f58a70f8087e3!2sRourkela%2C%20Odisha!5e0!3m2!1sen!2sin!4v1719066113824!5m2!1sen!2sin"
+                    width="100%"
+                    height="450"
+                    style="border:0;"
+                    allowfullscreen=""
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+        </section>
+    </main>
+
+    <script src="./assets/js/script.js"></script>
+    
+
 </body>
 </html>

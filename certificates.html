@@ -1,10 +1,135 @@
-<!-- about.html, projects.html, certifications.html, contact.html -->
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Page Title</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Certificates – Vishakha Pandey</title>
+
+    <!-- Google Fonts: Poppins (you can customize this) -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <!-- Your CSS Files -->
+    <link rel="stylesheet" href="./assets/css/variables.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/certificates.css"> <!-- New: Link to certificates.css -->
+    <link rel="stylesheet" href="./assets/css/animations.css">
 </head>
-<body>
-  <h1>Coming Soon...</h1>
+<body class="fade-in">
+
+    <!-- Navigation Bar -->
+     <nav class="navbar">
+    <div class="nav-left">
+      <a href="index.html">HOME</a>
+    </div>
+    <div class="nav-toggle">
+      <i class="fas fa-bars"></i>
+    </div>
+    <div class="nav-menu nav-right">
+      <a href="intro.html" >INTRO</a>
+      <a href="projects.html">PROJECTS</a>
+      <a href="experience.html" >EXPERIENCE</a>
+      <a href="certificates.html" class="active-page">CERTIFICATES/RESUME</a>
+      <a href="contact.html">CONTACT</a>
+    </div>
+  </nav>
+
+    <!-- Main content for Certificates page -->
+    <main id="certificates-content">
+        <section class="certificates-section">
+            <h2 class="section-title animate-on-scroll">Certificates & Trainings</h2>
+            <div class="certificates-grid">
+
+                <!-- Certificate Item 1: Data Analytic - Power BI -->
+                <div class="certificate-item animate-on-scroll delay-1">
+                    <img src="https://placehold.co/400x250/4eaf9c/ffffff?text=Power+BI+Cert" alt="Power BI Certificate">
+                    <div class="certificate-info">
+                        <h3>Data Analytic - Power BI</h3>
+                        <p class="issuer">Issued by Udemy</p>
+                        <p class="description">Comprehensive training covering Power BI tools for data analysis and dashboard creation.</p>
+                        <!-- <a href="#" target="_blank" class="verify-link">Verify <i class="fas fa-external-link-alt"></i></a> -->
+                    </div>
+                </div>
+
+                <!-- Certificate Item 2: The Essentials of Private Equity -->
+                <div class="certificate-item animate-on-scroll delay-2">
+                    <img src="https://placehold.co/400x250/4eaf9c/ffffff?text=Private+Equity+Cert" alt="Private Equity Certificate">
+                    <div class="certificate-info">
+                        <h3>The Essentials of Private Equity</h3>
+                        <p class="issuer">Issued by Udemy</p>
+                        <p class="description">Key concepts and practices in private equity, vital for financial professionals.</p>
+                        <!-- <a href="#" target="_blank" class="verify-link">Verify <i class="fas fa-external-link-alt"></i></a> -->
+                    </div>
+                </div>
+
+                <!-- Certificate Item 3: Tally (Prime) -->
+                <div class="certificate-item animate-on-scroll delay-3">
+                    <img src="https://placehold.co/400x250/4eaf9c/ffffff?text=Tally+Cert" alt="Tally Certificate">
+                    <div class="certificate-info">
+                        <h3>Tally (Prime)</h3>
+                        <p class="issuer">Issued by NISE Institution</p>
+                        <p class="description">Proficiency in Tally Prime software for accounting and financial management.</p>
+                        <!-- <a href="#" target="_blank" class="verify-link">Verify <i class="fas fa-external-link-alt"></i></a> -->
+                    </div>
+                </div>
+
+                <!-- Certificate Item 4: PDDCA -->
+                <div class="certificate-item animate-on-scroll delay-4">
+                    <img src="https://placehold.co/400x250/4eaf9c/ffffff?text=PDDCA+Cert" alt="PDDCA Certificate">
+                    <div class="certificate-info">
+                        <h3>PDDCA</h3>
+                        <p class="issuer">Issued by NISE</p>
+                        <p class="description">Post Graduate Diploma in Data Communication and Computer Application.</p>
+                        <!-- <a href="#" target="_blank" class="verify-link">Verify <i class="fas fa-external-link-alt"></i></a> -->
+                    </div>
+                </div>
+
+                <!-- Training Item 1: National workshop on research methodology and Data Analytics -->
+                <div class="certificate-item animate-on-scroll delay-5">
+                    <img src="https://placehold.co/400x250/4eaf9c/ffffff?text=Research+Workshop" alt="Research Methodology Workshop">
+                    <div class="certificate-info">
+                        <h3>National Workshop on Research Methodology & Data Analytics</h3>
+                        <p class="issuer">Attended at GM University</p>
+                        <p class="description">Enhanced skills in research methodologies and practical data analytics techniques.</p>
+                    </div>
+                </div>
+
+                <!-- Training Item 2: National Level Webinar on Investors awareness program -->
+                <div class="certificate-item animate-on-scroll delay-6">
+                    <img src="https://placehold.co/400x250/4eaf9c/ffffff?text=Investors+Webinar" alt="Investors Awareness Program">
+                    <div class="certificate-info">
+                        <h3>National Level Webinar on Investors Awareness Program</h3>
+                        <p class="issuer">Attended Online</p>
+                        <p class="description">Gained insights into investor behavior, market trends, and financial literacy.</p>
+                    </div>
+                </div>
+
+                <!-- Training Item 3: Workshop on financial modelling -->
+                <div class="certificate-item animate-on-scroll delay-7">
+                    <img src="https://placehold.co/400x250/4eaf9c/ffffff?text=Financial+Modelling" alt="Financial Modelling Workshop">
+                    <div class="certificate-info">
+                        <h3>Workshop on Financial Modelling</h3>
+                        <p class="issuer">Organized at State Level</p>
+                        <p class="description">Practical application of financial modeling techniques for business valuation and forecasting.</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Download Resume Section -->
+        <section class="resume-cta-section animate-on-scroll">
+            <p class="cta-text">Access my complete professional background.</p>
+            <!-- Please adjust 'assets/documents/Vishakha Pandey - Resume 2024-1.pdf' if your resume is located elsewhere -->
+            <a href="./resume/Vishakha_Resume.pdf" class="btn-outline" download>
+                <i class="fas fa-download"></i> Download Full Resume
+            </a>
+        </section>
+    </main>
+
+    <!-- Main JavaScript File (for navbar toggle and scroll animations) -->
+    <script src="./assets/js/script.js"></script>
+
 </body>
 </html>
