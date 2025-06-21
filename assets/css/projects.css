@@ -1,0 +1,260 @@
+.projects-section {
+  padding: var(--spacing-xl) var(--spacing-lg);
+  margin-top: var(--nav-height);
+  background: #fdfdfd;
+  text-align: center;
+}
+
+.section-title {
+  font-size: 2rem;
+  color: var(--color-accent);
+  margin-bottom: var(--spacing-lg);
+}
+
+.project-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--spacing-lg);
+  justify-items: center;
+
+  /* ✅ NEW: Add spacing around the gallery */
+  padding: var(--spacing-lg);
+  margin: var(--spacing-md) auto;
+  max-width: 1100px;
+  box-sizing: border-box;
+}
+
+
+.project-card {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  max-width: 320px;
+}
+
+.project-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+}
+
+.project-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.project-info {
+  padding: var(--spacing-md);
+}
+
+.project-info h3 {
+  font-size: 1.2rem;
+  color: var(--color-dark);
+  margin: 0 0 0.5rem;
+}
+
+.project-info p {
+  color: var(--color-muted);
+  font-size: 0.95rem;
+}
+
+
+/* ==== Filters ==== */
+.filter-buttons {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: var(--spacing-sm);
+  padding: var(--spacing-md) var(--spacing-lg); /* ⬅ Add this for outer spacing */
+}
+
+.filter-btn {
+  padding: 0.5rem 1.2rem;
+  border: 2px solid var(--color-accent);
+  background: none;
+  color: var(--color-accent);
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.3s ease;
+}
+
+.filter-btn.active,
+.filter-btn:hover {
+  background: var(--color-accent);
+  color: white;
+}
+
+/* ==== Modal ==== */
+.project-modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(15, 15, 15, 0.8);
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+}
+
+.project-modal.active {
+  display: flex;
+  animation: fadeIn 0.3s ease;
+}
+
+.modal-content {
+  background: white;
+  padding: 2rem;
+  max-width: 600px;
+  border-radius: 12px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  position: relative;
+}
+
+.modal-close {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.modal-content img {
+  width: 100%;
+  max-height: 300px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+.modal-text h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.modal-text p {
+  font-size: 1rem;
+  color: var(--color-dark);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.92);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.project-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(10, 10, 10, 0.85);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+  animation: fadeIn 0.4s ease forwards;
+}
+
+.modal-content {
+  background: #ffffff;
+  padding: 2rem;
+  max-width: 700px;
+  width: 90%;
+  border-radius: 12px;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
+  position: relative;
+  animation: slideInUp 0.5s ease forwards;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.modal-close {
+  position: absolute;
+  top: 14px;
+  right: 18px;
+  font-size: 1.5rem;
+  color: #444;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.modal-close:hover {
+  color: #f44336;
+}
+
+.modal-content img {
+  width: 100%;
+  max-height: 350px;
+  object-fit: cover;
+  border-radius: 10px;
+  border: 2px solid var(--color-accent);
+}
+
+.modal-text h3 {
+  margin-top: 0.5rem;
+  color: var(--color-accent);
+  font-size: 1.6rem;
+}
+
+.modal-text p {
+  font-size: 1.05rem;
+  color: var(--color-dark);
+  line-height: 1.6;
+}
+
+
+
+.modal-nav {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1rem;
+  gap: 1rem;
+}
+
+.modal-nav-btn {
+  background-color: #4caf50;
+  border: none;
+  color: white;
+  padding: 0.6rem 1.4rem;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background 0.3s;
+}
+
+.modal-nav-btn:hover {
+  background-color: #388e3c;
+}
+
+
+/* 🔽 Animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

@@ -1,10 +1,130 @@
-<!-- about.html, projects.html, certifications.html, contact.html -->
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Page Title</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Projects – Vishakha Pandey</title>
+
+  <link rel="stylesheet" href="assets/css/variables.css" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="stylesheet" href="assets/css/projects.css" />
+  <link rel="stylesheet" href="assets/css/animations.css" />
+
+
+    <link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+  integrity="sha512-Avb2QiuDEEvB4bZJYdft2mNjVShBftLdPG8FJ0V7irTLQ8Uo0qcPxh4Plq7G5tGm0rU+1SPhVotteLpBERwTkw=="
+  crossorigin="anonymous"
+  referrerpolicy="no-referrer"
+/>
+
 </head>
-<body>
-  <h1>Coming Soon...</h1>
+<body class="page-load">
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="nav-left">
+      <a href="index.html">HOME</a>
+    </div>
+    <div class="nav-toggle">
+      <i class="fas fa-bars"></i>
+    </div>
+    <div class="nav-menu nav-right">
+      <a href="intro.html">INTRO</a>
+      <a href="projects.html" class="active-page">PROJECTS</a>
+      <a href="experience.html">EXPERIENCE</a>
+      <a href="certificates.html">CERTIFICATES/RESUME</a>
+      <a href="contact.html">CONTACT</a>
+    </div>
+  </nav>
+
+ <!-- Inside <body> after navbar -->
+
+<section class="projects-section">
+  <h2 class="section-title">My Projects</h2>
+
+  <!-- 🔘 Filter Buttons -->
+  <div class="filter-buttons">
+    <button class="filter-btn active" data-filter="all">All</button>
+    <button class="filter-btn" data-filter="data">Data</button>
+    <button class="filter-btn" data-filter="finance">Finance</button>
+  </div>
+
+  <!-- 🖼️ Project Gallery -->
+  <div class="project-gallery">
+    <div class="project-card" data-category="finance">
+      <img src="assets/img/dummy-project1.png" alt="Finance Dashboard">
+      <div class="project-info">
+        <h3>Finance Dashboard</h3>
+        <p>Built with Python and Power BI</p>
+      </div>
+    </div>
+
+    <div class="project-card" data-category="data">
+      <img src="assets/img/dummy-project2.png" alt="Report Generator">
+      <div class="project-info">
+        <h3>Automated Report Generator</h3>
+        <p>Using Pandas and Excel API</p>
+      </div>
+    </div>
+
+    <div class="project-card" data-category="data finance">
+      <img src="assets/img/dummy-project3.png" alt="Stock Analyzer">
+      <div class="project-info">
+        <h3>Stock Trend Analyzer</h3>
+        <p>Python, Matplotlib</p>
+      </div>
+    </div>
+
+
+    <div class="project-card" data-category="data finance">
+      <img src="assets/img/dummy-project3.png" alt="Stock Analyzer">
+      <div class="project-info">
+        <h3>Stock Trend Analyzer</h3>
+        <p>Python, Matplotlib</p>
+      </div>
+    </div>
+
+    <div class="project-card" data-category="finance">
+      <img src="assets/img/dummy-project1.png" alt="Finance Dashboard">
+      <div class="project-info">
+        <h3>Finance Dashboard</h3>
+        <p>Built with Python and Power BI</p>
+      </div>
+    </div>
+
+    <div class="project-card" data-category="data">
+      <img src="assets/img/dummy-project2.png" alt="Report Generator">
+      <div class="project-info">
+        <h3>Automated Report Generator</h3>
+        <p>Using Pandas and Excel API</p>
+      </div>
+    </div>
+
+
+  </div>
+</section>
+
+<!-- 🔍 Modal Popup -->
+<div class="project-modal" id="projectModal">
+  <div class="modal-content">
+    <span class="modal-close">&times;</span>
+    <img id="modal-img" src="" alt="">
+    <div class="modal-nav">
+      <button id="prevProject" class="modal-nav-btn"><i class="fas fa-chevron-left"></i> Prev</button>
+      <button id="nextProject" class="modal-nav-btn">Next <i class="fas fa-chevron-right"></i></button>
+    </div>
+
+    <div class="modal-text">
+      <h3 id="modal-title">Project Title</h3>
+      <p id="modal-description">Project Description</p>
+    </div>
+  </div>
+</div>
+
+<script src="assets/js/mobileMenuToggle.js"></script>
+<script src="assets/js/projectFilterModal.js"></script>
+
 </body>
 </html>

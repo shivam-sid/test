@@ -13,9 +13,6 @@
   <link rel="stylesheet" href="assets/css/animations.css" />
 
 
-  <!-- Page-specific Styles -->
-  <link rel="stylesheet" href="assets/css/intro.css" />
-
   <!-- Font Awesome (for icons) -->
   <link
   rel="stylesheet"
@@ -26,7 +23,7 @@
 />
 
 </head>
-<body>
+<body class="fade-in">
 
   <!-- Navigation Bar -->
   <nav class="navbar">
@@ -49,12 +46,12 @@
   <section class="intro-section">
     <div class="intro-container">
       <!-- Left: Profile Image -->
-      <div class="intro-image">
+      <div class="intro-image reveal reveal-left">
         <img src="assets/img/intro_profile.jpg" alt="Vishakha Pandey">
       </div>
 
       <!-- Right: Text Content -->
-      <div class="intro-text">
+      <div class="intro-text reveal reveal-right">
         <h2>About Me</h2>
         <p>
           I’m Vishakha Pandey, a data-driven finance professional with a passion for analytics,
@@ -75,5 +72,7 @@
 
   <!-- JS for Mobile Navbar Toggle -->
   <script src="/assets/js/mobileMenuToggle.js"></script>
+  <script src="/assets/js/scrollReveal.js"></script>
+
 </body>
 </html>
