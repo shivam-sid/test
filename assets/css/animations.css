@@ -116,15 +116,69 @@
 
 /* Project model */
 /* Modal content transition */
-.modal-text,
-#modal-img {
-  opacity: 0;
-  transform: translateY(10px);
-  transition: opacity 0.4s ease, transform 0.4s ease;
+/* Project Modal Animations and Visual Effects */
+
+/* ✨ Fade-in animation for the modal backdrop */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
 
-.modal-show .modal-text,
-.modal-show #modal-img {
-  opacity: 1;
-  transform: translateY(0);
+/* ✨ Slide in from bottom for the modal content (drawer) */
+@keyframes slideInUp {
+    from {
+        transform: translateY(100%);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+
+/* ✨ Slide out to bottom for modal content (drawer) */
+@keyframes slideOutDown {
+    from {
+        transform: translateY(0);
+    }
+    to {
+        transform: translateY(100%);
+    }
+}
+
+
+/* 🔍 Modal entrance animation for the backdrop itself */
+/* This controls the background fade and the initial position of the modal container */
+.project-modal.modal-show {
+    animation: fadeIn 0.3s ease forwards;
+}
+
+/* 🧩 Modal content animation (the actual drawer) */
+/* This applies to the .modal-content inside the .project-modal */
+.project-modal.modal-show .modal-content {
+    animation: slideInUp 0.3s ease forwards;
+}
+
+/* Animation for when the modal is closing */
+.project-modal:not(.modal-show) .modal-content {
+    animation: slideOutDown 0.3s ease forwards;
+}
+
+/* 📸 Fade and lift for modal image and text */
+/* These make the internal content appear smoothly after the drawer slides up */
+.modal-details #modal-img,
+.modal-details h3,
+.modal-details p {
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.3s ease 0.1s, transform 0.3s ease 0.1s; /* Add a slight delay */
+}
+
+.project-modal.modal-show .modal-image-container img,
+.project-modal.modal-show .modal-details h3,
+.project-modal.modal-show .modal-details p {
+    opacity: 1;
+    transform: translateY(0);
 }

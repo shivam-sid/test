@@ -1,28 +1,21 @@
+<!-- Special case file doesnt reqires global css files. -->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Projects – Vishakha Pandey</title>
-
-  <link rel="stylesheet" href="assets/css/variables.css" />
-  <link rel="stylesheet" href="assets/css/style.css" />
-  <link rel="stylesheet" href="assets/css/projects.css" />
-  <link rel="stylesheet" href="assets/css/animations.css" />
-
-
-    <link
-  rel="stylesheet"
-  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-  integrity="sha512-Avb2QiuDEEvB4bZJYdft2mNjVShBftLdPG8FJ0V7irTLQ8Uo0qcPxh4Plq7G5tGm0rU+1SPhVotteLpBERwTkw=="
-  crossorigin="anonymous"
-  referrerpolicy="no-referrer"
-/>
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio - Projects</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="./assets/css/variables.css">
+    <link rel="stylesheet" href="/assets/css/projects.css">
+    <link rel="stylesheet" href="assets/css/style.css" />
 </head>
-<body class="page-load">
+<body class="fade-in">
 
-  <!-- Navbar -->
+   <!-- Navigation Bar -->
+  <!-- Navigation Bar -->
   <nav class="navbar">
     <div class="nav-left">
       <a href="index.html">HOME</a>
@@ -31,7 +24,7 @@
       <i class="fas fa-bars"></i>
     </div>
     <div class="nav-menu nav-right">
-      <a href="intro.html">INTRO</a>
+      <a href="intro.html" >INTRO</a>
       <a href="projects.html" class="active-page">PROJECTS</a>
       <a href="experience.html">EXPERIENCE</a>
       <a href="certificates.html">CERTIFICATES/RESUME</a>
@@ -39,92 +32,90 @@
     </div>
   </nav>
 
- <!-- Inside <body> after navbar -->
+    <main>
+        <section class="projects-section" id="projects">
+            <h1 class="section-title">My Projects</h1>
 
-<section class="projects-section">
-  <h2 class="section-title">My Projects</h2>
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="web">Web Development</button>
+                <button class="filter-btn" data-filter="data">Data Science</button>
+                <button class="filter-btn" data-filter="mobile">Mobile App</button>
+                <button class="filter-btn" data-filter="design">UI/UX Design</button>
+            </div>
 
-  <!-- 🔘 Filter Buttons -->
-  <div class="filter-buttons">
-    <button class="filter-btn active" data-filter="all">All</button>
-    <button class="filter-btn" data-filter="data">Data</button>
-    <button class="filter-btn" data-filter="finance">Finance</button>
-  </div>
+            <div class="project-gallery">
+                <div class="project-card" data-category="data">
+                    <img src="./assets/img/dummy-project1.png" alt="Finance Dashboard">
+                    <div class="project-info">
+                        <h3>Finance Dashboard</h3>
+                        <p>Built with Python and Power BI.</p>
+                    </div>
+                </div>
 
-  <!-- 🖼️ Project Gallery -->
-  <div class="project-gallery">
-    <div class="project-card" data-category="finance">
-      <img src="assets/img/dummy-project1.png" alt="Finance Dashboard">
-      <div class="project-info">
-        <h3>Finance Dashboard</h3>
-        <p>Built with Python and Power BI</p>
-      </div>
-    </div>
+                <div class="project-card" data-category="web">
+                    <img src="./assets/img/dummy-project2.png" alt="E-commerce Site">
+                    <div class="project-info">
+                        <h3>E-commerce Website</h3>
+                        <p>Full-stack development with MERN stack.</p>
+                    </div>
+                </div>
 
-    <div class="project-card" data-category="data">
-      <img src="assets/img/dummy-project2.png" alt="Report Generator">
-      <div class="project-info">
-        <h3>Automated Report Generator</h3>
-        <p>Using Pandas and Excel API</p>
-      </div>
-    </div>
+                <div class="project-card" data-category="mobile">
+                    <img src="./assets/img/dummy-project3.png" alt="Task Manager App">
+                    <div class="project-info">
+                        <h3>Task Manager App</h3>
+                        <p>Mobile application built with React Native.</p>
+                    </div>
+                </div>
 
-    <div class="project-card" data-category="data finance">
-      <img src="assets/img/dummy-project3.png" alt="Stock Analyzer">
-      <div class="project-info">
-        <h3>Stock Trend Analyzer</h3>
-        <p>Python, Matplotlib</p>
-      </div>
-    </div>
+                <div class="project-card" data-category="data">
+                    <img src="./assets/img/dummy-project2.png" alt="Stock Trend Analyzer">
+                    <div class="project-info">
+                        <h3>Stock Trend Analyzer</h3>
+                        <p>Python, Matplotlib for data visualization.</p>
+                    </div>
+                </div>
 
+                <div class="project-card" data-category="design">
+                    <img src="./assets/img/dummy-project3.png" alt="Portfolio Redesign">
+                    <div class="project-info">
+                        <h3>Portfolio Redesign</h3>
+                        <p>UI/UX design using Figma and Adobe XD.</p>
+                    </div>
+                </div>
 
-    <div class="project-card" data-category="data finance">
-      <img src="assets/img/dummy-project3.png" alt="Stock Analyzer">
-      <div class="project-info">
-        <h3>Stock Trend Analyzer</h3>
-        <p>Python, Matplotlib</p>
-      </div>
-    </div>
+                <div class="project-card" data-category="web">
+                    <img src="./assets/img/dummy-project1.png" alt="Blog Platform">
+                    <div class="project-info">
+                        <h3>Custom Blog Platform</h3>
+                        <p>Developed with Django and PostgreSQL.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-    <div class="project-card" data-category="finance">
-      <img src="assets/img/dummy-project1.png" alt="Finance Dashboard">
-      <div class="project-info">
-        <h3>Finance Dashboard</h3>
-        <p>Built with Python and Power BI</p>
-      </div>
-    </div>
+        <div id="projectModal" class="project-modal">
+            <div class="modal-content">
+                <span class="modal-close">&times;</span>
+                <div class="modal-image-container">
+                    <img id="modal-img" src="" alt="Project Image">
+                </div>
+                <div class="modal-details">
+                    <h3 id="modal-title"></h3>
+                    <p id="modal-description"></p>
+                    <p>This is a detailed description of the project. It would include technologies used, challenges faced, solutions implemented, and outcomes. You can add more paragraphs or even lists to fully describe your work. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                    <p>Feel free to expand this section with specifics about your role, project goals, and any unique aspects that demonstrate your skills. Ensure the content here is scrollable if it exceeds the modal's height.</p>
+                </div>
+                <div class="modal-nav">
+                    <button id="prevProject" class="modal-nav-btn"><i class="fas fa-chevron-left"></i> Prev</button>
+                    <button id="nextProject" class="modal-nav-btn">Next <i class="fas fa-chevron-right"></i></button>
+                </div>
+            </div>
+        </div>
+    </main>
 
-    <div class="project-card" data-category="data">
-      <img src="assets/img/dummy-project2.png" alt="Report Generator">
-      <div class="project-info">
-        <h3>Automated Report Generator</h3>
-        <p>Using Pandas and Excel API</p>
-      </div>
-    </div>
-
-
-  </div>
-</section>
-
-<!-- 🔍 Modal Popup -->
-<div class="project-modal" id="projectModal">
-  <div class="modal-content">
-    <span class="modal-close">&times;</span>
-    <img id="modal-img" src="" alt="">
-    <div class="modal-nav">
-      <button id="prevProject" class="modal-nav-btn"><i class="fas fa-chevron-left"></i> Prev</button>
-      <button id="nextProject" class="modal-nav-btn">Next <i class="fas fa-chevron-right"></i></button>
-    </div>
-
-    <div class="modal-text">
-      <h3 id="modal-title">Project Title</h3>
-      <p id="modal-description">Project Description</p>
-    </div>
-  </div>
-</div>
-
-<script src="assets/js/mobileMenuToggle.js"></script>
-<script src="assets/js/projectFilterModal.js"></script>
+    <script src="./assets/js/projectFilterModal.js"></script>
 
 </body>
 </html>
