@@ -156,6 +156,7 @@ html, body {
   color: var(--color-muted);
   margin: 0 auto;
   max-width: 90%;
+  
 }
 
 .inline-hero-image {
@@ -366,3 +367,4 @@ html, body {
     content: none;
   }
 }
+
