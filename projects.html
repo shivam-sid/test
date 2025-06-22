@@ -4,9 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Projects - Your Portfolio</title>
-
-    <base href="/test/">
-    
     <!-- Link your global variables and navbar styles -->
     <link rel="stylesheet" href="./assets/css/variables.css">
     <link rel="stylesheet" href="./assets/css/style.css"> 
@@ -47,36 +44,48 @@
             <h2 class="section-title">My Projects</h2>
             <div class="project-filters-container">
                 <button class="filter-button active" data-filter="all">All</button>
-                <button class="filter-button" data-filter="web-development">Web Development</button>
-                <button class="filter-button" data-filter="data-science">Data Science</button>
-                <button class="filter-button" data-filter="mobile-app">Mobile App</button>
-                <button class="filter-button" data-filter="ui-ux-design">UI/UX Design</button>
+                <button class="filter-button" data-filter="sql">Database (SQL)</button>
+                <button class="filter-button" data-filter="powerbi">PowerBI</button>
+                <button class="filter-button" data-filter="excel">Excel</button>
+                <button class="filter-button" data-filter="data_analytics">Data Analytics</button>
                 </div>
         </section>
 
         <section id="project-content" class="project-grid">
-            <div class="project-card" data-project-id="surf-project" data-category="data-science">
-                <img src="./assets/img/dummy-project1.png" alt="The #surf project. Thumbnail">
-                <h3>The #surf project.</h3>
-                <p>I recovered tweets containing #surf for 9 months.</p>
+            <div class="project-card" data-project-id="music-store" data-category="sql">
+                <img src="./assets/img/sql-project/music-store/sql-proj01.jpeg" alt="The SQL project. Thumbnail">
+                <h3>Music Store Analysis (SQL project)</h3>
+                <p>SQL data analysis of a music store database for actionable growth insights.</p>
             </div>
 
-            <div class="project-card" data-project-id="the-surf-project" data-category="web-development">
-                <img src="./assets/img/dummy-project2.png" alt="Project Alpha Thumbnail">
-                <h3>Project Alpha</h3>
-                <p>Exploring new data visualization techniques.</p>
+            <div class="project-card" data-project-id="sn-corporate" data-category="powerbi">
+                <img src="./assets/img/powerbi/SN-Corporate/sn-corporate.png" alt="PowerBI Project">
+                <h3>PowerBI Project (SN Corporate Insights)</h3>
+                <p>PowerBI insights from SN Corporate data to drive strategic growth and sales.</p>
             </div>
 
-            <div class="project-card" data-project-id="surf-project" data-category="data-science mobile-app">
-                <img src="./assets/img/dummy-project3.png" alt="Project Beta Thumbnail">
-                <h3>Project Beta</h3>
-                <p>Machine learning for predictive analytics.</p>
+            <div class="project-card" data-project-id="call-center" data-category="powerbi">
+                <img src="./assets/img/powerbi/Call-Center/call-center.png" alt="Call Center Performance Dashboard">
+                <h3>Call Center Performance Dashboard (PowerBI)</h3>
+                <p>PowerBI analysis of call center data to drive strategic decisions and sales growth.</p>
             </div>
             
-            <div class="project-card" data-project-id="the-surf-project" data-category="ui-ux-design web-development">
-                <img src="./assets/img/dummy-project2.png" alt="Project Gamma Thumbnail">
-                <h3>Project Gamma</h3>
-                <p>Web development with modern frameworks.</p>
+            <div class="project-card" data-project-id="vrinda-store" data-category="excel">
+                <img src="./assets/img/excel/Vrinda-Store/01.jpeg" alt="Sales Report ">
+                <h3>Vrinda Store Annual Sales Report (Excel)</h3>
+                <p> An Excel dashboard analyzing Vrinda Store's 2022 sales data to inform 2023 growth strategies and target key customer segments.</p>
+            </div>
+
+             <div class="project-card" data-project-id="sales-forecasting" data-category="powerbi data_analytics">
+                <img src="./assets/img/powerbi/Sales-Forecasting/01.jpeg" alt="Forecasting Dashboard Image">
+                <h3>PowerBI Sales Forecasting Dashboard</h3>
+                <p> A PowerBI dashboard leveraging time series analysis to provide accurate supermarket sales forecasts and actionable strategic insights.</p>
+            </div>
+
+            <div class="project-card" data-project-id="hr-analytics" data-category="powerbi data_analytics">
+                <img src="./assets/img/powerbi/HR-Analytics/01.jpeg" alt="HR Analytics Dashboard Image">
+                <h3>PowerBI HR Analytics Dashboard</h3>
+                <p> A PowerBI dashboard focused on HR analytics to enhance employee performance and reduce attrition through actionable data insights.</p>
             </div>
 
             </section>

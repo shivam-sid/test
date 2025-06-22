@@ -44,7 +44,7 @@
     height: 200px; /* Fixed height for certificate thumbnails */
     object-fit: cover; /* Cover the area, crop if necessary */
     flex-shrink: 0; /* Prevent image from shrinking if content is long */
-    border-bottom: 3px solid var(--color-accent); /* Accent border below image */
+    border-bottom: 1.5px solid var(--color-accent); /* Accent border below image */
 }
 
 .certificate-info {

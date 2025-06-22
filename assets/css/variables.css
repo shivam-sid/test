@@ -4,7 +4,7 @@
 
 :root {
   /* Colors */
-  --color-bg: #ffffff;                   /* Default background */
+  --color-bg: #fcfffb;                   /* Default background */
   --color-dark: #1a1a1a;                 /* Dark text */
   --color-accent: #4eaf9c;              /* Highlight color (mint green) */
   --color-muted: #777;                  /* Secondary text */
@@ -19,7 +19,6 @@
   --spacing-md: 1rem;
   --spacing-lg: 2rem;
   --spacing-xl: 4rem;
-  --spacing-xxl: 5rem;
 
 
   /* Sizes */

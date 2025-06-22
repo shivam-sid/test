@@ -3,7 +3,7 @@
    ============================= */
 
 .contact-section {
-    padding: var(--spacing-xl) var(--spacing-xxl); /* Increased horizontal padding */
+    padding: var(--spacing-xl) var(--spacing-xl); /* Increased horizontal padding */
     margin-top: var(--nav-height); /* Offset for fixed navbar */
     max-width: var(--max-width); /* Using global variable for max-width */
     margin-left: auto;
@@ -41,7 +41,7 @@
     color: var(--color-muted);
     text-align: center;
     margin-top: var(--spacing-lg); /* Ensure enough space from title + line */
-    margin-bottom: var(--spacing-xxl); /* Increased margin-bottom for more space */
+    margin-bottom: var(--spacing-xl); /* Increased margin-bottom for more space */
     max-width: 800px; /* Wider intro text */
     line-height: 1.6; /* Better readability */
 }
@@ -49,12 +49,12 @@
 .contact-wrapper {
     display: grid;
     grid-template-columns: 1fr 2fr; /* Info on left, form on right */
-    gap: var(--spacing-xxl); /* Increased space between columns */
+    gap: var(--spacing-xl); /* Increased space between columns */
     background-color: white;
     border-radius: 12px; /* Slightly more rounded corners */
     box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08); /* Stronger, softer shadow */
-    padding: var(--spacing-xxxl); /* Significantly more internal padding for the wrapper */
-    margin-bottom: var(--spacing-xxl); /* More space below wrapper */
+    padding: var(--spacing-xl); /* Significantly more internal padding for the wrapper */
+    margin-bottom: var(--spacing-xl); /* More space below wrapper */
     width: 100%; /* Ensure it takes full available width */
     max-width: 1000px; /* Max width for the wrapper */
 }
@@ -167,7 +167,7 @@
     background-color: white;
     border-radius: 12px;
     box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08); /* Consistent shadow */
-    padding: var(--spacing-xxl); /* More internal padding for map box */
+    padding: var(--spacing-xl); /* More internal padding for map box */
     text-align: center;
     margin-top: var(--spacing-xl);
     width: 100%;
@@ -202,7 +202,7 @@
     }
     .contact-wrapper {
         grid-template-columns: 1fr; /* Stack info and form on medium screens */
-        padding: var(--spacing-xxl); /* Adjusted responsive padding */
+        padding: var(--spacing-xl); /* Adjusted responsive padding */
         gap: var(--spacing-xl);
         max-width: 700px; /* Constrain width on smaller screens */
     }

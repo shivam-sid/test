@@ -1,0 +1,7 @@
+change the background color to #fcfffb;   for intro change manually.
+
+change xxxl or xxl to xl in contact
+
+project change .filter-buttons color to 4eaf9c;
+remove core values from intro.
+

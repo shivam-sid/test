@@ -6,7 +6,7 @@
 .intro-section {
   margin-top: var(--nav-height);
   padding: var(--spacing-lg);
-  background-color: #fdfdfd;
+  background-color: #fcfffb;  
   display: flex;
   justify-content: center;
   align-items: center;
