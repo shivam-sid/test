@@ -119,8 +119,8 @@ class EncryptFrame(customtkinter.CTkFrame):
         for category_name, widgets in self.operation_widgets.items():
             category_visible = False
             for widget in widgets:
-                if search_term in widget.cget("text").lower():
-                    widget.grid()
+                if search_term == "" or search_term in widget.cget("text").lower():
+                    widget.grid(sticky="ew", padx=10, pady=2)
                     category_visible = True
                 else:
                     widget.grid_forget()
@@ -264,14 +264,6 @@ class EncryptFrame(customtkinter.CTkFrame):
         else:
             self.app.show_toast("Warning", "Output is empty, nothing to copy.", toast_type="warning")
 
-    def update_recipe_placeholder(self):
-        step_frames = [child for child in self.recipe_scrollable_frame.winfo_children() if
-                       isinstance(child, customtkinter.CTkFrame)]
-        if not step_frames:
-            self.recipe_placeholder.pack(expand=True)
-        else:
-            self.recipe_placeholder.pack_forget()
-
     def save_recipe(self):
         recipe_steps = [child for child in self.recipe_scrollable_frame.winfo_children() if
                         isinstance(child, customtkinter.CTkFrame)]
@@ -349,3 +341,11 @@ class EncryptFrame(customtkinter.CTkFrame):
         self.output_textbox.configure(state="normal");
         self.output_textbox.delete("1.0", "end");
         self.output_textbox.configure(state="disabled")
+
+    def update_recipe_placeholder(self):
+        step_frames = [child for child in self.recipe_scrollable_frame.winfo_children() if
+                       isinstance(child, customtkinter.CTkFrame)]
+        if not step_frames:
+            self.recipe_placeholder.pack(expand=True)
+        else:
+            self.recipe_placeholder.pack_forget()

@@ -120,7 +120,7 @@ class DecryptFrame(customtkinter.CTkFrame):
             category_visible = False
             for widget in widgets:
                 if search_term == "" or search_term in widget.cget("text").lower():
-                    widget.grid()
+                    widget.grid(sticky="ew", padx=10, pady=2)
                     category_visible = True
                 else:
                     widget.grid_forget()

@@ -3,7 +3,6 @@
 import customtkinter
 from gui.encrypt_frame import EncryptFrame
 from gui.decrypt_frame import DecryptFrame
-from gui.settings_frame import SettingsFrame  # <-- Import the new settings frame
 from gui.toast import ToastNotification
 
 
@@ -17,6 +16,7 @@ class App(customtkinter.CTk):
         customtkinter.set_default_color_theme("blue")
 
         self.active_toast = None
+
         self.grid_rowconfigure(1, weight=1)
         self.grid_columnconfigure(0, weight=1)
 
@@ -35,7 +35,7 @@ class App(customtkinter.CTk):
 
         self.navigation_rail = customtkinter.CTkFrame(self.main_body_frame, width=150, corner_radius=0)
         self.navigation_rail.grid(row=0, column=0, sticky="nsw")
-        self.navigation_rail.grid_rowconfigure(4, weight=1)  # Adjust row weight
+        self.navigation_rail.grid_rowconfigure(3, weight=1)
 
         self.encrypt_button = customtkinter.CTkButton(self.navigation_rail, text="🔒  Encrypt",
                                                       command=lambda: self.select_frame("encrypt"), corner_radius=0,
@@ -47,12 +47,6 @@ class App(customtkinter.CTk):
                                                       height=50, font=("", 16), anchor="w", border_spacing=10)
         self.decrypt_button.grid(row=1, column=0, sticky="ew")
 
-        # --- NEW Settings Button ---
-        self.settings_button = customtkinter.CTkButton(self.navigation_rail, text="⚙️  Settings",
-                                                       command=lambda: self.select_frame("settings"), corner_radius=0,
-                                                       height=50, font=("", 16), anchor="w", border_spacing=10)
-        self.settings_button.grid(row=2, column=0, sticky="ew")
-
         self.frame_container = customtkinter.CTkFrame(self.main_body_frame, fg_color="transparent")
         self.frame_container.grid(row=0, column=1, sticky="nsew")
 
@@ -61,28 +55,27 @@ class App(customtkinter.CTk):
 
         self.frames = {
             "encrypt": EncryptFrame(master=self.frame_container, app=self, status_bar=self.status_bar),
-            "decrypt": DecryptFrame(master=self.frame_container, app=self, status_bar=self.status_bar),
-            "settings": SettingsFrame(master=self.frame_container)  # Add settings frame
+            "decrypt": DecryptFrame(master=self.frame_container, app=self, status_bar=self.status_bar)
         }
         self.select_frame("encrypt")
 
     def show_toast(self, title, message, toast_type="info"):
         if self.active_toast is not None and self.active_toast.winfo_exists():
             self.active_toast.destroy()
+
         toast = ToastNotification(self, title, message, toast_type)
         toast.place(relx=0.99, rely=0.98, anchor="se")
         toast.lift()
+
         self.active_toast = toast
+
         self.after(4000, toast.destroy)
 
     def select_frame(self, name):
-        # Update button styles
         self.encrypt_button.configure(
             fg_color="transparent" if name != "encrypt" else customtkinter.ThemeManager.theme["CTkButton"]["fg_color"])
         self.decrypt_button.configure(
             fg_color="transparent" if name != "decrypt" else customtkinter.ThemeManager.theme["CTkButton"]["fg_color"])
-        self.settings_button.configure(
-            fg_color="transparent" if name != "settings" else customtkinter.ThemeManager.theme["CTkButton"]["fg_color"])
 
         for frame_name, frame in self.frames.items():
             if frame_name == name:
