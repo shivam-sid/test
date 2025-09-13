@@ -1,2 +1,8 @@
+# File: requirements.txt
+
 customtkinter
 pyperclip
+opencv-python
+numpy
+cryptography
+Pillow
