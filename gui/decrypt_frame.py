@@ -3,7 +3,7 @@ import json
 from tkinter import filedialog
 from gui.base_frame import BaseFrame
 from operations.encoders import from_base64
-from operations.ciphers import caesar_cipher
+from operations.ciphers import caesar_cipher , atbash_cipher
 from operations.hex import from_hex
 
 
@@ -39,44 +39,118 @@ class DecryptFrame(BaseFrame):
                 return False, "Invalid shift value. Must be an integer."
             except AttributeError:
                 return False, "Could not find shift parameter."
+        elif operation_name == "Atbash Cipher":
+            return atbash_cipher(input_data)
         else:
             return False, f"Unknown operation: {operation_name}"
+
 
     def create_operations_sidebar(self):
         sidebar_frame = customtkinter.CTkFrame(self)
         sidebar_frame.grid(row=0, column=0, sticky="nsew", padx=(10, 5), pady=10)
-        sidebar_frame.grid_rowconfigure(1, weight=1);
+        sidebar_frame.grid_rowconfigure(1, weight=1)
         sidebar_frame.grid_columnconfigure(0, weight=1)
+
         customtkinter.CTkLabel(sidebar_frame, text="Operations",
                                font=customtkinter.CTkFont(size=18, weight="bold")).grid(row=0, column=0, padx=20,
                                                                                         pady=(10, 10))
+
         scrollable_frame = customtkinter.CTkScrollableFrame(sidebar_frame, fg_color="transparent", corner_radius=0)
-        scrollable_frame.grid(row=1, column=0, sticky="nsew", pady=(10, 0));
+        scrollable_frame.grid(row=1, column=0, sticky="nsew", pady=(10, 0))
         scrollable_frame.grid_columnconfigure(0, weight=1)
 
-        decoder_label = customtkinter.CTkLabel(scrollable_frame, text="Decoders",
-                                               font=customtkinter.CTkFont(weight="bold"))
-        decoder_label.grid(row=0, column=0, pady=(5, 2), padx=10, sticky="w")
+        # --- Utility Function for Separators ---
+        def add_separator(row):
+            separator = customtkinter.CTkFrame(scrollable_frame, height=1, fg_color="gray25")
+            separator.grid(row=row, column=0, sticky="ew", padx=10, pady=10)
+            return row + 1
 
-        from_base64_btn = customtkinter.CTkButton(scrollable_frame, text="From Base64", anchor="w",
-                                                  command=lambda: self.add_recipe_step("From Base64"))
-        from_base64_btn.grid(row=1, column=0, sticky="ew", padx=10, pady=2)
+        current_row = 0
 
-        from_hex_btn = customtkinter.CTkButton(scrollable_frame, text="From Hex", anchor="w",
-                                               command=lambda: self.add_recipe_step("From Hex"))
-        from_hex_btn.grid(row=2, column=0, sticky="ew", padx=10, pady=2)
+        # --- Section: Decoders ---
+        customtkinter.CTkLabel(scrollable_frame, text="Decoders", font=customtkinter.CTkFont(weight="bold")).grid(
+            row=current_row, column=0, pady=(5, 2), padx=10, sticky="w")
+        current_row += 1
+        customtkinter.CTkButton(scrollable_frame, text="From Base64", anchor="w",
+                                command=lambda: self.add_recipe_step("From Base64")).grid(row=current_row, column=0,
+                                                                                          sticky="ew", padx=10, pady=2)
+        current_row += 1
+        customtkinter.CTkButton(scrollable_frame, text="From Hex", anchor="w",
+                                command=lambda: self.add_recipe_step("From Hex")).grid(row=current_row, column=0,
+                                                                                       sticky="ew", padx=10, pady=2)
+        current_row += 1
+        customtkinter.CTkButton(scrollable_frame, text="From Binary", anchor="w",
+                                command=lambda: self.add_recipe_step("From Binary")).grid(row=current_row, column=0,
+                                                                                          sticky="ew", padx=10, pady=2)
+        current_row += 1
+        customtkinter.CTkButton(scrollable_frame, text="From Morse Code", anchor="w",
+                                command=lambda: self.add_recipe_step("From Morse Code")).grid(row=current_row, column=0,
+                                                                                              sticky="ew", padx=10,
+                                                                                              pady=2)
+        current_row += 1
+        current_row = add_separator(current_row)
 
-        cipher_label = customtkinter.CTkLabel(scrollable_frame, text="Ciphers",
-                                              font=customtkinter.CTkFont(weight="bold"))
-        cipher_label.grid(row=3, column=0, pady=(15, 2), padx=10, sticky="w")
+        # --- Section: Classic Ciphers ---
+        customtkinter.CTkLabel(scrollable_frame, text="Classic Ciphers",
+                               font=customtkinter.CTkFont(weight="bold")).grid(row=current_row, column=0, pady=(5, 2),
+                                                                               padx=10, sticky="w")
+        current_row += 1
+        customtkinter.CTkButton(scrollable_frame, text="Caesar Decrypt", anchor="w",
+                                command=lambda: self.add_recipe_step("Caesar Decrypt")).grid(row=current_row, column=0,
+                                                                                             sticky="ew", padx=10,
+                                                                                             pady=2)
+        current_row += 1
+        customtkinter.CTkButton(scrollable_frame, text="Atbash Cipher", anchor="w",
+                                command=lambda: self.add_recipe_step("Atbash Cipher")).grid(row=current_row, column=0,
+                                                                                            sticky="ew", padx=10,
+                                                                                            pady=2)
+        current_row += 1
+        customtkinter.CTkButton(scrollable_frame, text="ROT13 Cipher", anchor="w",
+                                command=lambda: self.add_recipe_step("ROT13 Cipher")).grid(row=current_row, column=0,
+                                                                                           sticky="ew", padx=10, pady=2)
+        current_row += 1
+        customtkinter.CTkButton(scrollable_frame, text="Vigenère Cipher", anchor="w",
+                                command=lambda: self.add_recipe_step("Vigenère Cipher")).grid(row=current_row, column=0,
+                                                                                              sticky="ew", padx=10,
+                                                                                              pady=2)
+        current_row += 1
+        current_row = add_separator(current_row)
 
-        caesar_decrypt_btn = customtkinter.CTkButton(scrollable_frame, text="Caesar Decrypt", anchor="w",
-                                                     command=lambda: self.add_recipe_step("Caesar Decrypt"))
-        caesar_decrypt_btn.grid(row=4, column=0, sticky="ew", padx=10, pady=2)
+        # --- Section: Symmetric Ciphers ---
+        customtkinter.CTkLabel(scrollable_frame, text="Symmetric Ciphers",
+                               font=customtkinter.CTkFont(weight="bold")).grid(row=current_row, column=0, pady=(5, 2),
+                                                                               padx=10, sticky="w")
+        current_row += 1
+        customtkinter.CTkButton(scrollable_frame, text="AES Decrypt", anchor="w",
+                                command=lambda: self.add_recipe_step("AES Decrypt")).grid(row=current_row, column=0,
+                                                                                          sticky="ew", padx=10, pady=2)
+        current_row += 1
+        customtkinter.CTkButton(scrollable_frame, text="DES Decrypt", anchor="w",
+                                command=lambda: self.add_recipe_step("DES Decrypt")).grid(row=current_row, column=0,
+                                                                                          sticky="ew", padx=10, pady=2)
+        current_row += 1
+        customtkinter.CTkButton(scrollable_frame, text="Triple DES Decrypt", anchor="w",
+                                command=lambda: self.add_recipe_step("Triple DES Decrypt")).grid(row=current_row,
+                                                                                                 column=0, sticky="ew",
+                                                                                                 padx=10, pady=2)
+        current_row += 1
+        customtkinter.CTkButton(scrollable_frame, text="Blowfish Decrypt", anchor="w",
+                                command=lambda: self.add_recipe_step("Blowfish Decrypt")).grid(row=current_row,
+                                                                                               column=0, sticky="ew",
+                                                                                               padx=10, pady=2)
+        current_row += 1
+        current_row = add_separator(current_row)
 
-        aes_decrypt_btn = customtkinter.CTkButton(scrollable_frame, text="AES Decrypt", anchor="w",
-                                                  command=lambda: self.add_recipe_step("AES Decrypt"))
-        aes_decrypt_btn.grid(row=5, column=0, sticky="ew", padx=10, pady=2)
+        # --- Section: Asymmetric Ciphers (Correctly Added) ---
+        customtkinter.CTkLabel(scrollable_frame, text="Asymmetric Ciphers",
+                               font=customtkinter.CTkFont(weight="bold")).grid(row=current_row, column=0, pady=(5, 2),
+                                                                               padx=10, sticky="w")
+        current_row += 1
+        customtkinter.CTkButton(scrollable_frame, text="RSA Decrypt", anchor="w",
+                                command=lambda: self.add_recipe_step("RSA Decrypt")).grid(row=current_row, column=0,
+                                                                                          sticky="ew", padx=10, pady=2)
+        current_row += 1
+
 
     def load_recipe(self):
         filepath = filedialog.askopenfilename(title="Load and Invert Recipe", filetypes=[("JSON files", "*.json")])
