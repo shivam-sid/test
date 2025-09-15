@@ -5,6 +5,10 @@ from gui.base_frame import BaseFrame
 from operations.encoders import from_base64
 from operations.ciphers import caesar_cipher , atbash_cipher
 from operations.hex import from_hex
+from operations.text_converters import from_binary, from_morse
+from operations.ciphers import aes_decrypt, des_decrypt, triple_des_decrypt, blowfish_decrypt
+from operations.ciphers import rot13_cipher, vigenere_cipher
+from operations.asymmetric_ciphers import rsa_decrypt
 
 
 class DecryptFrame(BaseFrame):
@@ -18,8 +22,13 @@ class DecryptFrame(BaseFrame):
         self.inverse_operations = {
             "To Base64": "From Base64", "From Base64": "To Base64",
             "To Hex": "From Hex", "From Hex": "To Hex",
+            "To Binary": "From Binary", "From Binary": "To Binary",
+            "Morse Code": "From Morse", "From Morse": "Morse Code",
             "Caesar Encrypt": "Caesar Decrypt", "Caesar Decrypt": "Caesar Encrypt",
-            "AES Encrypt": "AES Decrypt", "AES Decrypt": "AES Encrypt"
+            "Atbash Cipher": "Atbash Cipher", "ROT13 Cipher": "ROT13 Cipher",
+            "Vigenère Cipher": "Vigenère Cipher",
+            "AES Encrypt": "AES Decrypt", "AES Decrypt": "AES Encrypt",
+            "RSA Encrypt": "RSA Decrypt", "RSA Decrypt": "RSA Encrypt"
         }
 
         super().__init__(master, app, status_bar, **kwargs)
@@ -29,6 +38,10 @@ class DecryptFrame(BaseFrame):
             return from_base64(input_data)
         elif operation_name == "From Hex":
             return from_hex(input_data)
+        elif operation_name == "From Binary":
+            return from_binary(input_data)
+        elif operation_name == "From Morse Code":
+            return from_morse(input_data)
         elif operation_name == "Caesar Decrypt":
             try:
                 shift = int(step_frame.param_entry.get())
@@ -41,8 +54,52 @@ class DecryptFrame(BaseFrame):
                 return False, "Could not find shift parameter."
         elif operation_name == "Atbash Cipher":
             return atbash_cipher(input_data)
+        elif operation_name == "ROT13 Cipher":
+            return rot13_cipher(input_data)
+        elif operation_name == "Vigenère Cipher":
+            try:
+                key = step_frame.param_entry.get()
+                if not key:
+                    return False, "Vigenère key cannot be empty."
+                return vigenere_cipher(input_data, key, decrypt=True)
+            except AttributeError:
+                return False, "Could not find key parameter."
+            
+        elif operation_name == "AES Decrypt":
+            try:
+                key = step_frame.param_entry.get()
+                return aes_decrypt(input_data, key)
+            except AttributeError:
+                return False, "Could not find key parameter."
+        elif operation_name == "DES Decrypt":
+            try:
+                key = step_frame.param_entry.get()
+                return des_decrypt(input_data, key)
+            except AttributeError:
+                return False, "Could not find key parameter."
+        elif operation_name == "Triple DES Decrypt":
+            try:
+                key = step_frame.param_entry.get()
+                return triple_des_decrypt(input_data, key)
+            except AttributeError:
+                return False, "Could not find key parameter."
+        elif operation_name == "Blowfish Decrypt":
+            try:
+                key = step_frame.param_entry.get()
+                return blowfish_decrypt(input_data, key)
+            except AttributeError:
+                return False, "Could not find key parameter."
+        elif operation_name == "RSA Decrypt":
+            try:
+                private_key = step_frame.param_entry.get("1.0", "end-1c")
+                if not private_key:
+                    return False, "RSA private key cannot be empty."
+                return rsa_decrypt(input_data, private_key)
+            except AttributeError:
+                return False, "Could not find key parameter."
         else:
             return False, f"Unknown operation: {operation_name}"
+        
 
 
     def create_operations_sidebar(self):

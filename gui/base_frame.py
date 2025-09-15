@@ -185,6 +185,18 @@ class BaseFrame(customtkinter.CTkFrame):
             entry.insert(0, str(shift_val))
             entry.pack(side="left", fill="x", expand=True)
             step_frame.param_entry = entry
+        elif "RSA" in operation_name:
+            key_val = args.get("key", "")
+            textbox = customtkinter.CTkTextbox(param_container, height=120)
+            textbox.insert("1.0", key_val)
+            textbox.pack(side="left", fill="x", expand=True)
+            step_frame.param_entry = textbox
+        elif any(cipher in operation_name for cipher in ["Vigenère", "AES", "DES", "Triple DES", "Blowfish"]):
+            key_val = args.get("key", "")
+            entry = customtkinter.CTkEntry(param_container, placeholder_text="Enter Key...", width=150)
+            entry.insert(0, key_val)
+            entry.pack(side="left", fill="x", expand=True)
+            step_frame.param_entry = entry
         elif "AES" in operation_name:
             key = args.get("key", "")
             entry = customtkinter.CTkEntry(param_container, placeholder_text="Enter Key...")
