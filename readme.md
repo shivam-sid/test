@@ -1,165 +1,114 @@
-<div align="center">
+# CryptoSuite
 
-# CryptoSuite 🔐
-
-
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)](https://opensource.org/licenses/MIT)
-[![Repo size](https://img.shields.io/github/repo-size/sh4dowkey/CryptoSuite?style=for-the-badge)](https://github.com/sh4dowkey/CryptoSuite)
-![Python](https://img.shields.io/badge/python-3.8+-green.svg?style=for-the-badge&logo=python&logoColor=white)
-
-
-<img src="./assets/header-dark.webp" width="75%" alt="CryptoSuite - dark header" >
-
-</div>
-
-<br>
-
-> **CryptoSuite** — a lightweight, extensible cryptography toolkit written in **Python**. Designed for clarity and ease-of-use with a focus on modularity and learning.
-> *Work in Progress — currently implements Base64 encode/decode.* 🚧
-
+CryptoSuite is a Python-based cryptography and encoding toolkit that provides a clean, simple, and modular way of working with different cryptographic operations. It is designed to serve as both a practical tool for real usage and as a learning resource for people exploring how encryption, encoding, and decoding mechanisms work. The project is still under development but already offers multiple features that make it useful for developers, students, and enthusiasts who want to quickly test or apply different cryptographic functions.
 
 ---
 
+## Features
 
-## ✨ Why CryptoSuite?
+CryptoSuite comes with a variety of features that make it stand out from simple one-off scripts or basic encoders/decoders. The philosophy of the tool is to provide a system that can chain operations together into what are called **recipes**. These recipes are collections of steps that you can run sequentially, save for later use, or reload when you want to repeat the same process. This makes it powerful for tasks where you need more than one operation to reach the result.
 
-CryptoSuite simplifies cryptographic tasks into a clear, step-by-step **recipe workflow**.
+### Recipe System
+- You can create a sequence of operations (for example: convert text to Base64 → encode to HEX → apply a cipher).
+- Each step is executed in order, and the output of one step becomes the input of the next.
+- Recipes can be **saved** for future use, so you don’t need to manually rebuild them each time.
+- Recipes can be **loaded** at any point, making the tool practical for repeated workflows.
 
-It’s designed for students, developers, and security enthusiasts who need a practical yet approachable tool.
+### Base64 Encoding and Decoding
+- Supports full Base64 encoding of any given text input.
+- Supports decoding Base64 back into the original text or data.
+- Extremely useful when dealing with data serialization, binary-to-text conversions, or when working with web-related encodings.
 
-CryptoSuite makes cryptography accessible.
+### HEX Encoding and Decoding
+- Convert plain text into HEX representation with one click.
+- Decode HEX strings back into their original representation.
+- Helpful in debugging, working with binary protocols, or when analyzing encoded payloads.
 
----
+### Cipher Operations
+- The application includes basic cipher functionality.
+- Provides a base for more advanced cipher integrations like AES, which are planned for future updates.
+- Makes it possible to practice with classical cipher transformations and understand cryptography at a fundamental level.
 
+### Graphical User Interface (GUI)
+- CryptoSuite is not just a command-line utility; it comes with a **dark-themed GUI** that makes it easy to use.
+- The GUI is split into **Encrypt/Encode** and **Decrypt/Decode** panels, each with its own input and output boxes.
+- Dropdown menus allow you to select operations step by step and see results instantly.
+- The result is automatically displayed in the output box, so you can copy it or use it for the next step.
+- The GUI design allows you to add multiple operations to a recipe in one session.
 
-## 🛠️  Features
+### Save and Load Recipes
+- A very important feature is the ability to save custom-built recipes into files.
+- Once saved, a recipe can be reloaded at any point in the future to run the same operations again.
+- This makes it particularly useful for penetration testers, security researchers, and students who repeatedly need to apply the same transformations on data.
 
-**🚧 Available now**
-- Recipe-based system: chain multiple operations in sequence
-- Base64 encode & decode , HEX encode & decode , Cipher
-- Save and load recipes  
-- Dark-themed GUI with separate encrypt/decrypt panels  
+### Extensibility
+- The project is built in a modular way, meaning new operations (encoders, decoders, ciphers, hashes) can be easily added.
+- Developers can contribute by creating their own modules and adding them to the existing system.
 
-**🚧 Planned / Work in progress**
-- Auto-Detect mode ✨: analyze input and suggest operations  
-- AES encryption & decryption  
-- Classic ciphers  
-- Hashing tab (MD5, SHA-256)
-
-> See **Roadmap** below for details.
-
-
----
-
-
-## 🔐 Example Workflows
-
-### ⚡ Encryption & Decryption
-
-<div align="center">
-  <img src="./assets/encrypt.webp" alt="Encrypt" width="45%"/>
-  <img src="./assets/decrypt.webp" alt="Decrypt" width="45%"/>
-  <br/>
-  <sub>⚡ Encryption</sub>   <sub>🔓 Decryption</sub>
-</div>
-
----
-
-### 📂 Save & Load Recipes
-
-<div align="center">
-  <img src="./assets/save.webp" alt="Save Recipe" width="45%"/>
-  <img src="./assets/load.webp" alt="Load Recipe" width="45%"/>
-  <br/>
-  <sub>💾 Save Recipe</sub>   <sub>📂 Load Recipe</sub>
-</div>
-
-<br>
-
-> 💡 **Tip:** You can chain multiple encryptions in one recipe for extra security!
+### Planned Advanced Features
+Although the current version already supports Base64, HEX, and basic ciphers, several advanced features are being developed:
+- **AES Encryption & Decryption** – Strong symmetric encryption for practical usage.
+- **Auto-Detect Mode** – A smart mode that attempts to guess the type of encoding or encryption used on the input and suggests possible operations to decode it.
+- **Hashing Support** – Integration of hashing algorithms like MD5, SHA-1, and SHA-256 for quick calculations.
+- **Drag-and-Drop Recipe Editing** – A planned GUI improvement to allow rearranging the steps in recipes more easily.
+- **Classic Ciphers** – Inclusion of historical cipher algorithms like Caesar, Vigenère, and substitution ciphers for educational usage.
 
 ---
 
-## 🚀 Quick Start
+## How It Works
 
-```bash
-# Clone the repo
-git clone https://github.com/sh4dowkey/CryptoSuite.git
-cd CryptoSuite
+When you run CryptoSuite, the application launches a graphical window where you can start building your workflow:
 
-# (Optional) create and activate venv
-python -m venv .venv
-# Windows: .\.venv\Scripts\activate
-# macOS/Linux: source .venv/bin/activate
-
-# Install dependencies
-pip install -r requirements.txt
-
-# Run the application
-python main.py
-
-# This will launch the graphical user interface.
-```
+1. **Input Text** – Enter the plain text or encoded data that you want to work on.
+2. **Select Operation** – Choose an operation such as “To Base64”, “From HEX”, or “Cipher Encode”.
+3. **Chain Operations** – Add multiple steps to process the data further. Each step automatically takes the output of the previous one.
+4. **Output** – The final result of your sequence is displayed in the output box.
+5. **Save Recipe** – If you want to keep this exact sequence, you can save it as a recipe file.
+6. **Load Recipe** – At any time in the future, load the recipe and apply the same operations without rebuilding it manually.
 
 ---
 
+## Installation and Setup
 
-## 📖 Basic Usage
+1. Clone the repository:
 
-1.  Launch the application by running `python main.py`.
-2.  In the **"Encrypt / Encode"** panel on the left, type your text into the "Input" box.
-3.  Click the **"Add Operation"** dropdown and select **"To Base64"**.
-4.  The encoded result will instantly appear in the "Output" box.
-5.  You can add more operations to the recipe or save the current recipe using the **"Save Recipe"** button.
+   ```bash
+   git clone https://github.com/shivam-sid/cryptosuite.git
+   cd cryptosuite
+   ```
 
----
+2. (Optional) Set up a virtual environment:
 
+   ```bash
+   python -m venv venv
+   source venv/bin/activate   # For Linux/Mac
+   venv\Scripts\activate      # For Windows
+   ```
 
-## 🛣️ Roadmap
+3. Install required dependencies:
 
-**v0.1** (current)  
-- GUI with encrypt/decrypt panels  
-- Base64 encode/decode  
-- Recipe system with save/load  
+   ```bash
+   pip install -r requirements.txt
+   ```
 
-**v0.2**  
-- Auto-Detect feature  
-- AES cipher integration  
-- Unit tests  
+4. Run the application:
 
-**v0.3+**  
-- Classic ciphers and hashing  
-- Drag-and-drop for recipe steps  
-- Expanded documentation and CI  
-
----
-
-
-## 🤝 Contributing
-
-Contributions are welcome!  
-
-1. Fork the repo  
-2. Create a feature branch (`git checkout -b feat/my-feature`)  
-3. Add tests and documentation  
-4. Open a Pull Request  
-
-Please keep functions small, documented, and covered by unit tests where possible.
+   ```bash
+   python main.py
+   ```
 
 ---
 
+## Why Use CryptoSuite?
 
-## 📝 License
-
-This project is released under the **MIT License**.
-
----
-
-
-## 🙏 Acknowledgements
-
-Inspired by community cryptography resources and educational projects.
-
-If you find CryptoSuite useful, please ⭐ the repo and consider contributing!
+- **User Friendly**: The GUI is intuitive and eliminates the need to memorize commands.
+- **Educational**: Perfect for students learning about cryptography and encoding methods.
+- **Reusable**: The recipe feature allows automation of workflows.
+- **Extensible**: Developers can add their own operations with minimal effort.
+- **Practical**: Provides a quick way to encode, decode, or cipher text without needing multiple different tools.
 
 ---
+
+## Future Vision
+
+The long-term vision of CryptoSuite is to become a one-stop lightweight cryptography toolkit for both educational and practical usage. By combining multiple cryptographic operations into a single GUI-based system, it bridges the gap between learning tools and professional utilities. Planned additions like AES, hashing, and auto-detect will make it even more useful in everyday security-related workflows. Contributions from the community will also help expand the scope of supported operations, ensuring that CryptoSuite grows into a complete cryptographic suite.
